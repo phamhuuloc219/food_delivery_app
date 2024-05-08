@@ -358,11 +358,11 @@ class Restaurant extends ChangeNotifier{
       bool isSameFood = item.food == food;
       //check if the list of selected addons are the same
       bool isSameAddons = ListEquality().equals(item.selectedAddons, selectedAddons);
-      return isSameAddons && isSameFood;
+      return isSameFood && isSameAddons;
     });
     // if item already exists, increase it's quantity
-    if(CartItem != null){
-      cartItem?.quantity++;
+    if(cartItem != null){
+      cartItem.quantity++;
     }
     // otherwise, add a new cart item to the cart
     else{

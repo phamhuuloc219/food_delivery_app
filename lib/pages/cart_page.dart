@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/components/my_button.dart';
 import 'package:food_delivery_app/components/my_cart_title.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
+import 'package:food_delivery_app/pages/payment_page.dart';
 import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
@@ -18,21 +20,71 @@ class CartPage extends StatelessWidget {
             title: Text("Cart"),
             backgroundColor: Colors.transparent,
             foregroundColor: Theme.of(context).colorScheme.inversePrimary,
+            actions: [
+              // clear cart button
+              IconButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: Text("Are you sure you want to clear the cart?"),
+                          actions: [
+                            // cancel button
+                            TextButton(
+                                onPressed: () => Navigator.pop(context),
+                                child: Text("Cancel")
+                            ),
+                            // yes button
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  restaurant.clearCart();
+                                },
+                                child: Text("Yes")
+                            ),
+                          ],
+                        ),
+                    );
+                  },
+                  icon: Icon(Icons.delete)
+              ),
+            ],
           ),
           body: Column(
             children: [
-              Expanded(
-                  child: ListView.builder(
-                    itemCount: userCart.length,
-                    itemBuilder: (context, index){
-                      // get individual cart item
-                      final cartItem = userCart[index];
 
-                      // return cart title
-                      return MyCartTitle(cartItem: cartItem,);
-                    }
-                  ),
+              // list of cart
+              Expanded(
+                child: Column(
+                  children: [
+                    userCart.isEmpty
+                        ? Expanded(
+                        child: Center(
+                            child: Text("Cart is empty...")
+                        )
+                    )
+                        : Expanded(
+                                child: ListView.builder(
+                                  itemCount: userCart.length,
+                                  itemBuilder: (context, index){
+                                    // get individual cart item
+                                    final cartItem = userCart[index];
+
+                                    // return cart title
+                                    return MyCartTitle(cartItem: cartItem,);
+                                  }
+                                ),
+                        ),
+                  ],
+                ),
               ),
+              
+              // button to pay
+              MyButton(
+                  ontap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentPage(),)),
+                  text: "Go to checkout"
+              ),
+              SizedBox(height: 25,)
             ],
           ),
         );
