@@ -44,6 +44,7 @@ class MyCartTitle extends StatelessWidget {
                         cartItem.food.name,
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontSize: 11,
                             //color: Theme.of(context).colorScheme.primary
                         ),
                       ),
@@ -53,24 +54,26 @@ class MyCartTitle extends StatelessWidget {
                         "\$"+cartItem.food.price.toString(),
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontSize: 12,
                             color: Theme.of(context).colorScheme.primary
                         ),
                       ),
+                      SizedBox(height: 10,),
+                      // increment and decrement quantity
+                      QuantitySelector(
+                        quantity: cartItem.quantity,
+                        food: cartItem.food,
+                        onIncrement: () {
+                          restaurant.addToCart(cartItem.food, cartItem.selectedAddons);
+                        },
+                        onDecrement: () {
+                          restaurant.removeFromCart(cartItem);
+                        },
+                      ),
                     ],
                   ),
-                  Spacer(),
 
-                  // increment and decrement quantity
-                  QuantitySelector(
-                      quantity: cartItem.quantity,
-                      food: cartItem.food,
-                      onIncrement: () {
-                        restaurant.addToCart(cartItem.food, cartItem.selectedAddons);
-                      },
-                      onDecrement: () {
-                        restaurant.removeFromCart(cartItem);
-                      },
-                  ),
+
                 ],
               ),
             ),
