@@ -7,8 +7,11 @@ class MyTabBar extends StatelessWidget {
 
   List<Tab> _buildCategoryTabs(){
     return FoodCategory.values.map((category) {
+      String categoryName = category.toString().split('.').last;
+      categoryName = categoryName.substring(0, 1).toUpperCase() +
+          categoryName.substring(1);
       return Tab(
-        text: category.toString().split('.').last,
+        text: categoryName,
       );
     }).toList();
   }

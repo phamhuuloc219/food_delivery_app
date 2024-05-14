@@ -16,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   // text editing controller
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
   //login method
   void login() async{
     // get instance auth service

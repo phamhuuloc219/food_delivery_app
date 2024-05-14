@@ -22,11 +22,23 @@ class MyReceipt extends StatelessWidget {
               ),
               padding: EdgeInsets.all(25),
               child: Consumer<Restaurant>(
-                  builder: (context, restaurant, child) => Text(restaurant.displayCartReceipt()),
+                  builder: (context, restaurant, child) => Text(
+                    restaurant.displayCartReceipt(),
+                    style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  ),
               ),
             ),
             SizedBox(height: 25,),
-            Text("Estimated delivery time is: 4:10 PM")
+            Text(
+              "Estimated delivery time is: 4:10 PM",
+              style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              ),
+            )
           ],
         ),
       ),

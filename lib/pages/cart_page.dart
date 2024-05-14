@@ -18,6 +18,7 @@ class CartPage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: Text("Cart"),
+            centerTitle: true,
             backgroundColor: Colors.transparent,
             foregroundColor: Theme.of(context).colorScheme.inversePrimary,
             actions: [
@@ -32,7 +33,7 @@ class CartPage extends StatelessWidget {
                             // cancel button
                             TextButton(
                                 onPressed: () => Navigator.pop(context),
-                                child: Text("Cancel")
+                                child: Text("Cancel",style: TextStyle(color: Colors.green),)
                             ),
                             // yes button
                             TextButton(
@@ -40,7 +41,7 @@ class CartPage extends StatelessWidget {
                                   Navigator.pop(context);
                                   restaurant.clearCart();
                                 },
-                                child: Text("Yes")
+                                child: Text("Yes",style: TextStyle(color: Colors.red),)
                             ),
                           ],
                         ),

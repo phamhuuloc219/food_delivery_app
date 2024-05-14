@@ -33,7 +33,7 @@ class FoodTitle extends StatelessWidget {
 
                 // food image
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(12),
                     child: Image.asset(food.imagePath, height: 100, width: 100,),
                 ),
               ],
