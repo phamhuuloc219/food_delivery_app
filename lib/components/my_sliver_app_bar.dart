@@ -26,7 +26,7 @@ class MySliverAppBar extends StatelessWidget {
       ],
       backgroundColor: Theme.of(context).colorScheme.background,
       foregroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: Text("PHL Restaurant"),
+      title: Text("RASCHJRS Restaurant",style: TextStyle(fontSize: 20,),),
       centerTitle: true,
       flexibleSpace: FlexibleSpaceBar(
         background: Padding(

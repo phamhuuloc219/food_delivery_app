@@ -33,7 +33,7 @@ class MyReceipt extends StatelessWidget {
             ),
             SizedBox(height: 25,),
             Text(
-              "Estimated delivery time is: 4:10 PM",
+              "Estimated delivery time is: 15 min",
               style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,

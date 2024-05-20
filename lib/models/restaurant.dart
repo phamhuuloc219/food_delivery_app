@@ -206,71 +206,71 @@ class Restaurant extends ChangeNotifier{
       ],
     ),
 
-    // desserts
-    Food(
-      name: "Banana Parfait",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/desserts/banana_parfait.jpg",
-      price: 2.99,
-      category: FoodCategory.desserts,
-      availableAddons: [
-        Addon(name: "Extra 3 cakes", price: 0.99),
-        Addon(name: "Extra 6 cakes", price: 1.49),
-        Addon(name: "Extra 9 cakes", price: 1.99),
-      ],
-    ),
-
-    Food(
-      name: "Cherry Delight Dessert",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/desserts/cherry_delight_dessert.jpg",
-      price: 2.99,
-      category: FoodCategory.desserts,
-      availableAddons: [
-        Addon(name: "Extra 3 cakes", price: 0.99),
-        Addon(name: "Extra 6 cakes", price: 1.49),
-        Addon(name: "Extra 9 cakes", price: 1.99),
-      ],
-    ),
-
-    Food(
-      name: "ChocoPie",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/desserts/choco_bye.jpg",
-      price: 2.99,
-      category: FoodCategory.desserts,
-      availableAddons: [
-        Addon(name: "Extra 3 cakes", price: 0.99),
-        Addon(name: "Extra 6 cakes", price: 1.49),
-        Addon(name: "Extra 9 cakes", price: 1.99),
-      ],
-    ),
-
-    Food(
-      name: "Chocolate Dessert",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/desserts/chocolate_dessert.jpg",
-      price: 2.99,
-      category: FoodCategory.desserts,
-      availableAddons: [
-        Addon(name: "Extra 3 cakes", price: 0.99),
-        Addon(name: "Extra 6 cakes", price: 1.49),
-        Addon(name: "Extra 9 cakes", price: 1.99),
-      ],
-    ),
-
-    Food(
-      name: "Strawberry Cake",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/desserts/strawberry_short_cake.jpg",
-      price: 2.99,
-      category: FoodCategory.desserts,
-      availableAddons: [
-        Addon(name: "Extra 3 cakes", price: 0.99),
-        Addon(name: "Extra 6 cakes", price: 1.49),
-        Addon(name: "Extra 9 cakes", price: 1.99),
-      ],
-    ),
+    //desserts
+    // Food(
+    //   name: "Banana Parfait",
+    //   description: "Thơm ngon mời bạn ăn nha",
+    //   imagePath: "lib/images/desserts/banana_parfait.jpg",
+    //   price: 2.99,
+    //   category: FoodCategory.desserts,
+    //   availableAddons: [
+    //     Addon(name: "Extra 3 cakes", price: 0.99),
+    //     Addon(name: "Extra 6 cakes", price: 1.49),
+    //     Addon(name: "Extra 9 cakes", price: 1.99),
+    //   ],
+    // ),
+    //
+    // Food(
+    //   name: "Cherry Delight Dessert",
+    //   description: "Thơm ngon mời bạn ăn nha",
+    //   imagePath: "lib/images/desserts/cherry_delight_dessert.jpg",
+    //   price: 2.99,
+    //   category: FoodCategory.desserts,
+    //   availableAddons: [
+    //     Addon(name: "Extra 3 cakes", price: 0.99),
+    //     Addon(name: "Extra 6 cakes", price: 1.49),
+    //     Addon(name: "Extra 9 cakes", price: 1.99),
+    //   ],
+    // ),
+    //
+    // Food(
+    //   name: "ChocoPie",
+    //   description: "Thơm ngon mời bạn ăn nha",
+    //   imagePath: "lib/images/desserts/choco_bye.jpg",
+    //   price: 2.99,
+    //   category: FoodCategory.desserts,
+    //   availableAddons: [
+    //     Addon(name: "Extra 3 cakes", price: 0.99),
+    //     Addon(name: "Extra 6 cakes", price: 1.49),
+    //     Addon(name: "Extra 9 cakes", price: 1.99),
+    //   ],
+    // ),
+    //
+    // Food(
+    //   name: "Chocolate Dessert",
+    //   description: "Thơm ngon mời bạn ăn nha",
+    //   imagePath: "lib/images/desserts/chocolate_dessert.jpg",
+    //   price: 2.99,
+    //   category: FoodCategory.desserts,
+    //   availableAddons: [
+    //     Addon(name: "Extra 3 cakes", price: 0.99),
+    //     Addon(name: "Extra 6 cakes", price: 1.49),
+    //     Addon(name: "Extra 9 cakes", price: 1.99),
+    //   ],
+    // ),
+    //
+    // Food(
+    //   name: "Strawberry Cake",
+    //   description: "Thơm ngon mời bạn ăn nha",
+    //   imagePath: "lib/images/desserts/strawberry_short_cake.jpg",
+    //   price: 2.99,
+    //   category: FoodCategory.desserts,
+    //   availableAddons: [
+    //     Addon(name: "Extra 3 cakes", price: 0.99),
+    //     Addon(name: "Extra 6 cakes", price: 1.49),
+    //     Addon(name: "Extra 9 cakes", price: 1.99),
+    //   ],
+    // ),
 
     // drinks
     Food(
@@ -288,7 +288,7 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "Matcha đá xay",
-      description: "Thơm ngon mời bạn uống nha",
+      description: "Đậm vị matcha, tươi mát sảng khoái",
       imagePath: "lib/images/drinks/matcha_da_xay.jpg",
       price: 1.99,
       category: FoodCategory.drinks,

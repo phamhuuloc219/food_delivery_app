@@ -46,13 +46,12 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //logo
-            Icon(
-                Icons.lock_open_rounded,
-              size: 100,
-              color: Theme.of(context).colorScheme.inversePrimary,
-            ),
-
-            const SizedBox(height: 25,),
+            // Icon(
+            //     Icons.lock_open_rounded,
+            //   size: 100,
+            //   color: Theme.of(context).colorScheme.inversePrimary,
+            // ),
+            Image(image:AssetImage("lib/images/logo.png"),width: 135,height: 135,),
 
             //message, app slogan
             Text(

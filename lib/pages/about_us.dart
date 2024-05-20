@@ -24,7 +24,7 @@ class AboutUs extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "Chào mừng đến với thế giới đồ ăn nhanh của nhóm Lộc - Thảo!",
+                  "Chào mừng đến với ứng dụng giao đồ ăn của nhà hàng RASCHJRS thực hiện bởi nhóm Lộc - Thảo!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 17,
