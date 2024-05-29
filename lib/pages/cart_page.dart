@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/my_button.dart';
 import 'package:food_delivery_app/components/my_cart_title.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
+import 'package:food_delivery_app/pages/home_page.dart';
 import 'package:food_delivery_app/pages/payment_page.dart';
 import 'package:provider/provider.dart';
 
@@ -40,7 +41,7 @@ class _CartPageState extends State<CartPage> {
                         content: SingleChildScrollView(
                           child: ListBody(
                             children: [
-                              Text('Cart is empty'),
+                              Text("Cart is empty !!! Do you want to go to the order screen?"),
                             ],
                           ),
                         ),
@@ -50,7 +51,15 @@ class _CartPageState extends State<CartPage> {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            child: Text('Close',style:TextStyle(color: Theme.of(context).colorScheme.inversePrimary),),
+                            child: Text('Cancel',style:TextStyle(color: Colors.red),),
+                          ),
+                          //yes
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+                            },
+                            child: Text('Yes',style:TextStyle(color: Colors.green),),
                           ),
                         ],
                       ),
@@ -165,7 +174,7 @@ class _CartPageState extends State<CartPage> {
                             content: SingleChildScrollView(
                               child: ListBody(
                                 children: [
-                                  Text('Cart is empty'),
+                                  Text("Cart is empty !!! Do you want to go to the order screen?"),
                                 ],
                               ),
                             ),
@@ -175,7 +184,15 @@ class _CartPageState extends State<CartPage> {
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: Text('Close',style:TextStyle(color: Theme.of(context).colorScheme.inversePrimary),),
+                                child: Text('Cancel',style:TextStyle(color: Colors.red),),
+                              ),
+                              //yes
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+                                },
+                                child: Text('Yes',style:TextStyle(color: Colors.green),),
                               ),
                             ],
                           ),
