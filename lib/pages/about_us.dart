@@ -23,8 +23,19 @@ class AboutUs extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                const SizedBox(height: 20),
                 Text(
-                  "Chào mừng đến với ứng dụng giao đồ ăn của nhà hàng RASCHJRS thực hiện bởi nhóm Lộc - Thảo!",
+                  "Bài tập nhóm cuối kỳ môn Lập trình thiết bị di động: Food delivery app",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                  ),
+                ),
+                const SizedBox(height: 50),
+                Text(
+                  "Giảng viên hướng dẫn:\n ThS Huỳnh Tuấn Anh",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 17,
@@ -34,7 +45,7 @@ class AboutUs extends StatelessWidget {
                 ),
                 const SizedBox(height: 50),
                 Text(
-                  "Ứng dụng giao đồ ăn nhanh của nhóm Lộc - Thảo ra đời với mục tiêu mang đến cho khách hàng những trải nghiệm ẩm thực tuyệt vời và tiện lợi nhất. Chúng tôi cam kết cung cấp dịch vụ giao đồ ăn nhanh chóng, an toàn và chất lượng, giúp khách hàng tiết kiệm thời gian và tận hưởng những bữa ăn ngon ngay tại nhà.",
+                  "Thành viên trong nhóm: \n1. Phạm Hữu Lộc\n2. Nguyễn Thị Thanh Thảo",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 17,
@@ -44,17 +55,7 @@ class AboutUs extends StatelessWidget {
                 ),
                 const SizedBox(height: 50),
                 Text(
-                  "Lợi ích khi sử dụng ứng dụng: \n - Tiết kiệm thời gian: Chỉ cần vài thao tác trên ứng dụng, bạn có thể đặt món ăn yêu thích mà không cần ra ngoài.\n- Chất lượng đảm bảo: Món ăn được chế biến từ nguyên liệu tươi ngon, được chọn lọc kỹ càng từ nhà cung cấp uy tín.\n- Ưu đãi hấp dẫn: Ứng dụng thường xuyên có các chương trình khuyến mãi, giảm giá dành cho khách hàng thân thiết.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.inversePrimary,
-                  ),
-                ),
-                const SizedBox(height: 50),
-                Text(
-                  "Chúng tôi luôn lắng nghe và giải quyết mọi phản hồi từ khách hàng, không ngừng cải thiện chất lượng dịch vụ.",
+                  "Luôn luôn lắng nghe \n- \nLâu lâu mới hiểu",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 17,
@@ -76,8 +77,9 @@ class AboutUs extends StatelessWidget {
                   " Copyright© by PHL",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 17,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
                     color: Colors.black87,
                   ),
                 ),

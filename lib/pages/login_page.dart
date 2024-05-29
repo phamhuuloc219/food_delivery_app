@@ -1,38 +1,78 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/my_button.dart';
 import 'package:food_delivery_app/components/my_textfield.dart';
+import 'package:food_delivery_app/pages/home_page.dart';
+import 'package:food_delivery_app/pages/register_page.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
-  final void Function()? ontap;
+  const LoginPage({
+    super.key,
+    required this.onTap,
+  });
 
-  const LoginPage({super.key, required this.ontap});
+  final Function()? onTap;
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // text editing controller
+  //text editing controllers
   final TextEditingController emailController = TextEditingController();
+
   final TextEditingController passwordController = TextEditingController();
 
-  //login method
-  void login() async{
+//User Sign In method
+  void signUserIn() async {
     // get instance auth service
     final _authService = AuthService();
-    // try sign in
-    try{
-      await _authService.signInWithEmailPassword(emailController.text, passwordController.text);
 
-    }
-    // display any errors
-    catch(e){
+    //show loading circle
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(
+            color: Colors.blue,
+          ),
+        );
+      },
+    );
+
+    //try sign in
+    try {
+      //try sign in
+      //await _authService.signInWithEmailPassword(emailController.text, passwordController.text);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+      //pop the circle
+      Navigator.pop(context);
+      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+    } on FirebaseAuthException catch (e) {
+      //pop the loading circle
+      Navigator.pop(context);
+
+      //show alert dialog with error message
       showDialog(
         context: context,
-        builder: (context) => AlertDialog(
-          title: Text(e.toString()),
-        ),
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('Sign in Failed'),
+            content: const Text('Username Or Password Incorrect'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          );
+        },
       );
     }
   }
@@ -41,80 +81,115 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            //logo
-            // Icon(
-            //     Icons.lock_open_rounded,
-            //   size: 100,
-            //   color: Theme.of(context).colorScheme.inversePrimary,
-            // ),
-            Image(image:AssetImage("lib/images/logo.png"),width: 135,height: 135,),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 30.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              //logo
+              Image(image:AssetImage("assets/images/logo.png"),width: 135,height: 135,),
 
-            //message, app slogan
-            Text(
-              "Food Delivery App",
-              style: TextStyle(
+              const SizedBox(height: 25),
+
+              //message,app slogan
+              Text(
+                'RASCHJRS Restaurant',
+                textAlign: TextAlign.center,
+                style: TextStyle(
                   fontSize: 16,
-                  color: Theme.of(context).colorScheme.inversePrimary
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
-            ),
 
-            const SizedBox(height: 25,),
+              const SizedBox(height: 25),
 
-            //email textfield
-            MyTextField(
+              //email textfield
+
+              MyTextField(
                 controller: emailController,
-                hintText: "Email",
+                hintText: 'Email',
                 obscureText: false,
-            ),
+              ),
 
-            const SizedBox(height: 10,),
+              const SizedBox(height: 10),
 
-            //password textfield
-            MyTextField(
-              controller: passwordController,
-              hintText: "Password",
-              obscureText: true,
-            ),
+              //password textfield
+              MyTextField(
+                controller: passwordController,
+                hintText: 'Password',
+                obscureText: true,
+              ),
 
-            const SizedBox(height: 10,),
+              const SizedBox(height: 25),
 
-            //sign in button
-            MyButton(
-                ontap: login,
-                text: "Sign In"),
+              //sign in button
 
-            const SizedBox(height: 25,),
+              MyButton(
+                ontap: signUserIn,
+                text: 'Login',
+              ),
 
-            //not a member? register now
+              const SizedBox(height: 10),
 
-            Row(
-              mainAxisAlignment:  MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Not a member?",
-                  style: TextStyle(
-                      color: Theme.of(context).colorScheme.inversePrimary
-                  ),
-                ),
-                const SizedBox(width: 4,),
-                GestureDetector(
-                  onTap: widget.ontap,
-                  child: Text(
-                    "Register now",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.inversePrimary,
-                      fontWeight: FontWeight.bold
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Forgot password?',
+                          style: TextStyle(
+                            color:
+                            Theme.of(context).colorScheme.inversePrimary,
+                          ),
+                        ),
+                        const SizedBox(width: 5),
+                      ],
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            )
+              ),
 
-          ],
+              const SizedBox(height: 60),
+
+              //not a member? register now
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Not a member? ',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RegisterPage(onTap: () {}),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        'Register Now',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

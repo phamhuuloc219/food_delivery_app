@@ -4,6 +4,7 @@ import 'package:food_delivery_app/components/my_drawer_title.dart';
 import 'package:food_delivery_app/pages/about_us.dart';
 import 'package:food_delivery_app/pages/settings_page.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
+import 'package:food_delivery_app/services/auth/login_or_register.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
@@ -13,11 +14,14 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
+
   User user = FirebaseAuth.instance.currentUser!;
+
   void logOut(){
     final authService = AuthService();
     authService.signOut();
   }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -97,7 +101,7 @@ class _MyDrawerState extends State<MyDrawer> {
               ontap: () {
                 logOut();
                 Navigator.pop(context);
-
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginOrRegister(),));
               },
               text: "L O G O U T",
               icon: Icons.logout

@@ -3,6 +3,7 @@ import 'package:food_delivery_app/components/my_receipt.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:food_delivery_app/pages/home_page.dart';
 import 'package:food_delivery_app/services/database/firestore.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class DeliveryProgressPage extends StatefulWidget {
@@ -17,6 +18,32 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
   // get acces to db
   FirestoreService db = FirestoreService();
 
+  void infoDriver() {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text('Info Driver'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: [
+                Text('Name: Phạm Hữu Lộc'),
+                Text('Phone number: 0376282119'),
+              ],
+            ),
+          ),
+          actions: [
+            //cancel
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Close',style:TextStyle(color: Theme.of(context).colorScheme.inversePrimary),),
+            ),
+          ],
+        ),
+      );
+  }
+
   @override
   void initState() {
     super.initState();
@@ -29,10 +56,32 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
-              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),)),
-              icon: Icon(Icons.home)
+              onPressed: (){
+                // clear cart
+                context.read<Restaurant>().clearCart();
+                Navigator.push(context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.arrow_back, color: Theme.of(context).colorScheme.inversePrimary,)
+          ),
+          Spacer(),
+          IconButton(
+              onPressed: (){
+                // clear cart
+                context.read<Restaurant>().clearCart();
+                Navigator.push(context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.home, color: Theme.of(context).colorScheme.inversePrimary,)
           ),
         ],
 
@@ -41,7 +90,16 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            MyReceipt()
+            const MyReceipt(),
+            const SizedBox(height: 10),
+            LottieBuilder.network(
+              'https://lottie.host/ce96b661-1556-4147-8ec3-b56290210cbb/1J4ypWs3i8.json',
+              width: 200,
+              height: 120,
+            ),
+            const SizedBox(
+              height: 20,
+            )
           ],
         ),
       ),
@@ -69,9 +127,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
               shape: BoxShape.circle
             ),
             child: IconButton(
-                onPressed: () {
-
-                },
+                onPressed:() => infoDriver(),
                 icon: Icon(Icons.person)
             ),
           ),
@@ -108,9 +164,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
                     shape: BoxShape.circle
                 ),
                 child: IconButton(
-                    onPressed: () {
-
-                    },
+                    onPressed:() => infoDriver(),
                     icon: Icon(Icons.message_sharp,color: Theme.of(context).colorScheme.primary,)
                 ),
               ),
@@ -125,9 +179,7 @@ class _DeliveryProgressPageState extends State<DeliveryProgressPage> {
                     shape: BoxShape.circle
                 ),
                 child: IconButton(
-                    onPressed: () {
-
-                    },
+                    onPressed:() => infoDriver(),
                     icon: Icon(Icons.call,color: Colors.green,)
                 ),
               ),

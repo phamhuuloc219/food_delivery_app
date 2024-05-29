@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       //     backgroundColor: Theme.of(context).colorScheme.background
       // ),
       backgroundColor: Theme.of(context).colorScheme.secondary,
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) =>[
               MySliverAppBar(
@@ -82,13 +82,13 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
 
-                      Divider(indent: 25, endIndent: 25, color: Theme.of(context).colorScheme.secondary,),
+                      //Divider(indent: 25, endIndent: 25, color: Theme.of(context).colorScheme.secondary,),
 
                       // my current location
                       MyCurrentLocation(),
 
                       // description box
-                      MyDescriptionBox(),
+                      const MyDescriptionBox(),
                     ],
                   ),
               ),

@@ -11,8 +11,8 @@ class Restaurant extends ChangeNotifier{
     // burgers
     Food(
         name: "Chicken Burger",
-        description: "Thơm ngon mời bạn ăn nha",
-        imagePath: "lib/images/burgers/burger_ga.jpg",
+        description: "A juicy chicken patty with salad and a hint of onion.",
+        imagePath: "assets/images/burgers/burger_ga.jpg",
         price: 7.99,
         category: FoodCategory.burgers,
         availableAddons: [
@@ -24,8 +24,8 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "Beef Burger",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/burgers/burger_bo.jpg",
+      description: "A juicy beef patty with melted cheddar, tomato, and a hint of onion pickle.",
+      imagePath: "assets/images/burgers/burger_bo.jpg",
       price: 8.99,
       category: FoodCategory.burgers,
       availableAddons: [
@@ -37,8 +37,8 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "Shrimp Burger",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/burgers/burger_tom.jpg",
+      description: "A juicy shrimp patty with salad , tomato, and a hint of onion.",
+      imagePath: "assets/images/burgers/burger_tom.jpg",
       price: 6.99,
       category: FoodCategory.burgers,
       availableAddons: [
@@ -50,8 +50,8 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "Fish Burger",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/burgers/burger_ca.jpg",
+      description: "Delicious, please eat",
+      imagePath: "assets/images/burgers/burger_ca.jpg",
       price: 6.99,
       category: FoodCategory.burgers,
       availableAddons: [
@@ -63,8 +63,8 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "Classic Cheese Burger",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/burgers/smashed_cheeseburger.jpg",
+      description: "A juicy beef patty with melted cheddar, tomato, and a hint of onion pickle.",
+      imagePath: "assets/images/burgers/smashed_cheeseburger.jpg",
       price: 8.99,
       category: FoodCategory.burgers,
       availableAddons: [
@@ -77,8 +77,8 @@ class Restaurant extends ChangeNotifier{
     // salads
     Food(
       name: "Asian Sesame Salad",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/salads/asiansesame_salad.jpg",
+      description: "Crisp romaine lettuce tossed in creamy Caesar dressing, topped with grated Parmesan cheese, crunchy croutons, and grilled chicken strips.",
+      imagePath: "assets/images/salads/asiansesame_salad.jpg",
       price: 6.99,
       category: FoodCategory.salads,
       availableAddons: [
@@ -90,8 +90,8 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "Ceasar Salad",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/salads/ceasar_salad.jpg",
+      description: "Very good for health and heart",
+      imagePath: "assets/images/salads/ceasar_salad.jpg",
       price: 7.99,
       category: FoodCategory.salads,
       availableAddons: [
@@ -103,8 +103,8 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "Quinoa Salad",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/salads/quinoa_salad.jpg",
+      description: "Very good for health and heart",
+      imagePath: "assets/images/salads/quinoa_salad.jpg",
       price: 9.99,
       category: FoodCategory.salads,
       availableAddons: [
@@ -116,8 +116,8 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "Greek Salad",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/salads/greek_salad.jpg",
+      description: "Very good for health and heart",
+      imagePath: "assets/images/salads/greek_salad.jpg",
       price: 8.99,
       category: FoodCategory.salads,
       availableAddons: [
@@ -129,8 +129,8 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "South West Salad",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/salads/southwest_salad.jpg",
+      description: "Very good for health and heart",
+      imagePath: "assets/images/salads/southwest_salad.jpg",
       price: 8.99,
       category: FoodCategory.salads,
       availableAddons: [
@@ -143,8 +143,8 @@ class Restaurant extends ChangeNotifier{
     // sides
     Food(
       name: "Sweet Potato Fries",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/sides/sweet_potato_side.jpg",
+      description: "Delicious, please eat",
+      imagePath: "assets/images/sides/sweet_potato_side.jpg",
       price: 3.99,
       category: FoodCategory.sides,
       availableAddons: [
@@ -155,22 +155,22 @@ class Restaurant extends ChangeNotifier{
     ),
 
     Food(
-      name: "Orion Rings",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/sides/onion_rings_side.jpg",
+      name: "Crispy Onion Rings",
+      description: 'Thick-cut onion rings coated in a crispy batter, served with a side of tangy barbecue sauce for dipping.',
+      imagePath: "assets/images/sides/onion_rings_side.jpg",
       price: 3.99,
       category: FoodCategory.sides,
       availableAddons: [
         Addon(name: "Ranch Dip", price: 0.99),
         Addon(name: "Spicy Mayo", price: 1.49),
-        Addon(name: "Parmeson Dust", price: 1.99),
+        Addon(name: "Parmesan Dust", price: 1.99),
       ],
     ),
 
     Food(
       name: "Garlic Bread",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/sides/garlic_bread_side.jpg",
+      description: "Delicious, please eat",
+      imagePath: "assets/images/sides/garlic_bread_side.jpg",
       price: 3.49,
       category: FoodCategory.sides,
       availableAddons: [
@@ -182,8 +182,8 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "Loaded Sweet Potato Fries",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/sides/loadedfries_side.jpg",
+      description: "Delicious, please eat",
+      imagePath: "assets/images/sides/loadedfries_side.jpg",
       price: 4.99,
       category: FoodCategory.sides,
       availableAddons: [
@@ -195,8 +195,8 @@ class Restaurant extends ChangeNotifier{
 
     Food(
       name: "Crispy Mac & Cheese Bites",
-      description: "Thơm ngon mời bạn ăn nha",
-      imagePath: "lib/images/sides/mac_side.jpg",
+      description: "Delicious, please eat",
+      imagePath: "assets/images/sides/mac_side.jpg",
       price: 3.99,
       category: FoodCategory.sides,
       availableAddons: [
@@ -210,7 +210,7 @@ class Restaurant extends ChangeNotifier{
     // Food(
     //   name: "Banana Parfait",
     //   description: "Thơm ngon mời bạn ăn nha",
-    //   imagePath: "lib/images/desserts/banana_parfait.jpg",
+    //   imagePath: "assets/images/desserts/banana_parfait.jpg",
     //   price: 2.99,
     //   category: FoodCategory.desserts,
     //   availableAddons: [
@@ -223,7 +223,7 @@ class Restaurant extends ChangeNotifier{
     // Food(
     //   name: "Cherry Delight Dessert",
     //   description: "Thơm ngon mời bạn ăn nha",
-    //   imagePath: "lib/images/desserts/cherry_delight_dessert.jpg",
+    //   imagePath: "assets/images/desserts/cherry_delight_dessert.jpg",
     //   price: 2.99,
     //   category: FoodCategory.desserts,
     //   availableAddons: [
@@ -236,7 +236,7 @@ class Restaurant extends ChangeNotifier{
     // Food(
     //   name: "ChocoPie",
     //   description: "Thơm ngon mời bạn ăn nha",
-    //   imagePath: "lib/images/desserts/choco_bye.jpg",
+    //   imagePath: "assets/images/desserts/choco_bye.jpg",
     //   price: 2.99,
     //   category: FoodCategory.desserts,
     //   availableAddons: [
@@ -249,7 +249,7 @@ class Restaurant extends ChangeNotifier{
     // Food(
     //   name: "Chocolate Dessert",
     //   description: "Thơm ngon mời bạn ăn nha",
-    //   imagePath: "lib/images/desserts/chocolate_dessert.jpg",
+    //   imagePath: "assets/images/desserts/chocolate_dessert.jpg",
     //   price: 2.99,
     //   category: FoodCategory.desserts,
     //   availableAddons: [
@@ -262,7 +262,7 @@ class Restaurant extends ChangeNotifier{
     // Food(
     //   name: "Strawberry Cake",
     //   description: "Thơm ngon mời bạn ăn nha",
-    //   imagePath: "lib/images/desserts/strawberry_short_cake.jpg",
+    //   imagePath: "assets/images/desserts/strawberry_short_cake.jpg",
     //   price: 2.99,
     //   category: FoodCategory.desserts,
     //   availableAddons: [
@@ -274,66 +274,66 @@ class Restaurant extends ChangeNotifier{
 
     // drinks
     Food(
-      name: "Cà phê muối",
-      description: "Thơm ngon nức mũi",
-      imagePath: "lib/images/drinks/coffee_muoi.jpg",
+      name: "Salted coffee",
+      description: "Salted coffee offers a delightful departure from traditional coffee drinks, a balance of savory and sweet flavors. ",
+      imagePath: "assets/images/drinks/coffee_muoi.jpg",
       price: 1.99,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addon(name: "Thêm lớp kem trứng", price: 0.99),
-        Addon(name: "Thêm cốt dừa", price: 0.49),
-        Addon(name: "Thêm kem trứng & cốt dừa", price: 1.19),
+        Addon(name: "Extra the egg cream layer", price: 0.99),
+        Addon(name: "Extra coconut milk", price: 0.49),
+        Addon(name: "Extra the egg cream layer & coconut milk", price: 1.19),
       ],
     ),
 
     Food(
-      name: "Matcha đá xay",
-      description: "Đậm vị matcha, tươi mát sảng khoái",
-      imagePath: "lib/images/drinks/matcha_da_xay.jpg",
+      name: "Matcha ice blended",
+      description: "A matcha ice blended is a refreshing and flavorful drink made with matcha powder, ice, and milk",
+      imagePath: "assets/images/drinks/matcha_da_xay.jpg",
       price: 1.99,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addon(name: "Thêm lớp kem trứng", price: 0.99),
-        Addon(name: "Thêm thạch", price: 0.49),
-        Addon(name: "Thêm kem trứng & thạch", price: 1.19),
+        Addon(name: "Extra the egg cream layer", price: 0.99),
+        Addon(name: "Extra jelly", price: 0.49),
+        Addon(name: "Extra the egg cream layer & jelly", price: 1.19),
       ],
     ),
 
     Food(
-      name: "Sữa tươi trân châu đường đen",
-      description: "Thơm ngon mời bạn uống nha",
-      imagePath: "lib/images/drinks/sttcdd.jpg",
+      name: "Fresh milk with brown sugar pearls",
+      description: "Fresh milk with brown sugar pearls is a popular drink in Asia, particularly Taiwan, and is gaining traction around the world.",
+      imagePath: "assets/images/drinks/sttcdd.jpg",
       price: 1.99,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addon(name: "Thêm trân châu", price: 0.49),
-        Addon(name: "Thêm thạch", price: 0.49),
-        Addon(name: "Thêm trân châu & thạch", price: 0.99),
+        Addon(name: "Extra pearls", price: 0.49),
+        Addon(name: "Extra jelly", price: 0.49),
+        Addon(name: "Extra jelly & pearls", price: 0.99),
       ],
     ),
 
     Food(
-      name: "Trà sữa khoai môn",
-      description: "Thơm ngon mời bạn uống nha",
-      imagePath: "lib/images/drinks/ts_khoai_mon.jpg",
+      name: "Taro milk tea",
+      description: "Unique flavor, visually appealing, variety of toppings",
+      imagePath: "assets/images/drinks/ts_khoai_mon.jpg",
       price: 1.99,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addon(name: "Thêm trân châu", price: 0.49),
-        Addon(name: "Thêm thạch", price: 0.49),
-        Addon(name: "Thêm trân châu & thạch", price: 0.99),
+        Addon(name: "Extra pearls", price: 0.49),
+        Addon(name: "Extra jelly", price: 0.49),
+        Addon(name: "Extra jelly & pearls", price: 0.99),
       ],
     ),
 
     Food(
-      name: "Yogurt Việt Quất",
-      description: "Thơm ngon mời bạn uống nha",
-      imagePath: "lib/images/drinks/yogurt_viet_quat.jpg",
+      name: "Blueberry Yogurt",
+      description: "Blueberry yogurt is a good source of protein, calcium, and probiotics. It is also a low-fat and low-calorie food.",
+      imagePath: "assets/images/drinks/yogurt_viet_quat.jpg",
       price: 1.99,
       category: FoodCategory.drinks,
       availableAddons: [
-        Addon(name: "Thêm việt quất", price: 0.99),
-        Addon(name: "Thêm sữa chua", price: 0.49),
+        Addon(name: "Extra blueberries", price: 0.99),
+        Addon(name: "Extra yogurt", price: 0.49),
         Addon(name: "Upsize", price: 1.19),
       ],
     ),
@@ -343,7 +343,7 @@ class Restaurant extends ChangeNotifier{
   // user cart
   final List<CartItem> _cart = [];
   // delivery address
-  String _deliveryAddress ="2 Nguyễn Đình Chiểu";
+  String _deliveryAddress ="Nha Trang University";
 
   /*
   GETTERS
