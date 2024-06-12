@@ -1,10 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/my_drawer_title.dart';
+import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:food_delivery_app/pages/about_us.dart';
 import 'package:food_delivery_app/pages/settings_page.dart';
 import 'package:food_delivery_app/services/auth/auth_service.dart';
 import 'package:food_delivery_app/services/auth/login_or_register.dart';
+import 'package:provider/provider.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
@@ -100,6 +102,7 @@ class _MyDrawerState extends State<MyDrawer> {
           MyDrawerTitle(
               ontap: () {
                 logOut();
+                context.read<Restaurant>().clearCart();
                 Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => LoginOrRegister(),));
               },

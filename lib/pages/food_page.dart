@@ -30,14 +30,6 @@ class _FoodPageState extends State<FoodPage> {
     // close the current food page to go back to menu
     Navigator.pop(context);
 
-    // open cart
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context) => const CartPage(),
-    //   ),
-    // );
-
     //format the selected addons
     List<Addon> currentlySelectedAddons = [];
     for (Addon addon in widget.food.availableAddons) {

@@ -116,7 +116,7 @@ class MyCartTitle extends StatelessWidget {
                     )
                     .toList(),
               ),
-            )
+            ),
           ],
         ),
       ),

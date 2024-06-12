@@ -161,6 +161,16 @@ class _CartPageState extends State<CartPage> {
                   ],
                 ),
               ),
+
+              Padding(
+                padding: EdgeInsets.only(right: 25, bottom:5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text("Total Price: ${restaurant.getTotalPrice().toStringAsFixed(2)}", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 15)),
+                  ],
+                ),
+              ),
               //Button to pay
               Padding(
                 padding: const EdgeInsets.only(top: 10),

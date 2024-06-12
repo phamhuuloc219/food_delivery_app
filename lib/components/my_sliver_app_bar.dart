@@ -15,7 +15,6 @@ class MySliverAppBar extends StatelessWidget {
       floating: false,
       pinned: true,
       actions: [
-        // cart button
         IconButton(
             onPressed: () {
               // go to cart page
