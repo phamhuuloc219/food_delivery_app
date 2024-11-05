@@ -7,7 +7,7 @@
 <br>
 <p> 
   <h1>
-  Bài tập nhóm môn Lập trình thiết bị di động: Food delivery app</h1>
+  Bài tập nhóm môn Lập trình thiết bị di động: RASCHJRS Restaurant</h1>
   <br>
   <h2>Thành viên trong nhóm:</h2>
 
